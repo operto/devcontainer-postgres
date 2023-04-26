@@ -10,10 +10,22 @@ Example of managing PostgreSQL in a VSCode project.
 - This is a container based solution that allows you not add additional dependancies on a developers machine.
 - This example comes with PGAdmin so that engineers can view the database and the data for understanding and debugging.
 
-## How to
+### How this works
+- .devcontainer
+ - .env: File that has the configuration for the docker containers
+ - devcontainer.json: VSCode devcontainer json file which sets up the environment, you will find the docker-compose file, a post startup command which does the 'liquibase update' and the ports that are exposed
+ - docker-compose.yml: The Docker compose file that loads up all required containers.
+- .db
+ - liquibase.properties: Contains the credentials that liquibase uses to update the schema
+ - mydatabase.xml: controls the revision list, and order to apply schema changes
+ - changelog-***.xml: change log files that manage individual revisions to the database schema
+ - default-insert-for-admin_config.sql: Data file that is loaded in change-log-5.0.xml; which is related to that specific change
+- Dockerfile: Container that VSCode runs in, this is the terminal with liquibase as a tool.
 
-1. Open project in container
-2. [pgadmin](http://localhost:5050): to view the data in the database.
+## How to
+1. Open VSCode
+2. Open project in container
+3. [PGAdmin](http://localhost:5050): to view the data in the database.
 - Username: dude@secret.io
 - Password: supersecret
 - Register:
@@ -21,7 +33,7 @@ Example of managing PostgreSQL in a VSCode project.
  - Database: mydatabase
  - Username: nottheadmin
  - Password: metadata
-3. liquibase VSCode terminal: to update database schema via Liquibase
+4. liquibase VSCode terminal: to update database schema via Liquibase
 
 Credentials: ./.devcontainer/.env
 Liquibase Properties: ./db/liquibase.properties
