@@ -35,12 +35,13 @@ Example of managing PostgreSQL in a VSCode project.
  - Password: metadata
 4. liquibase VSCode terminal: to update database schema via Liquibase
 
-Credentials: ./.devcontainer/.env
-Liquibase Properties: ./db/liquibase.properties
 
 
 ## Debug
-If Credentials aren't working:
+Credentials: ./.devcontainer/.env
+Liquibase Properties (credentials must match .env): ./db/liquibase.properties
+
+If you change credentials and they aren't working:
 ```
 docker volume rm $[docker volume ls -q --filter dangling=true]
 ```
