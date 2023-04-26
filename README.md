@@ -28,13 +28,12 @@ Example of managing PostgreSQL in a VSCode project.
 3. [PGAdmin](http://localhost:5050): to view the data in the database.
 - Username: dude@secret.io
 - Password: supersecret
-- Register:
- - Host Name: postgres
- - Database: mydatabase
- - Username: nottheadmin
- - Password: metadata
-4. liquibase VSCode terminal: to update database schema via Liquibase
-
+4. PGAdmin register database:
+- Host Name: postgres
+- Database: mydatabase
+- Username: nottheadmin
+- Password: metadata
+5. liquibase VSCode terminal: to update database schema via Liquibase
 
 
 ## Debug
