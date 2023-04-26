@@ -1,0 +1,8 @@
+{
+    "name": "mydatabase: OneBox",
+	"dockerComposeFile": "docker-compose.yml",
+    "postStartCommand": "(cd ./db/ && liquibase update)",
+    "service": "app",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "forwardPorts": [5432,5050]
+}
