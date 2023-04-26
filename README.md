@@ -26,7 +26,7 @@ Example of managing PostgreSQL in a VSCode project.
 1. Open VSCode
 2. Open project in container
 - dialog box should show in bottom right corner
-- Or View > Command Pallet... > Dev Containers: Reopen in Container
+- Or View > Command Palette... > Dev Containers: Reopen in Container
 3. [PGAdmin](http://localhost:5050): to view the data in the database.
 - Username: dude@secret.io
 - Password: supersecret
