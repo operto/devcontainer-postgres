@@ -15,16 +15,17 @@ Example of managing PostgreSQL in a VSCode project.
 
 1. `./.devcontainer/`
 
-    - .env: File that has the configuration for the docker containers
-    - devcontainer.json: VSCode devcontainer json file which sets up the environment, you will find the docker-compose file, a post startup command which does the 'liquibase update' and the ports that are exposed
-    - docker-compose.yml: The Docker compose file that loads up all required containers.
+    - `.env`: File that has the configuration for the docker containers
+    - `devcontainer.json`: VSCode devcontainer json file which sets up the environment, you will find the docker-compose file, a post startup command which does the 'liquibase update' and the ports that are exposed
+    - `docker-compose.yml`: The Docker compose file that loads up all required containers.
     
 2. `./.db/`
 
-    - liquibase.properties: Contains the credentials that liquibase uses to update the schema
-    - mydatabase.xml: controls the revision list, and order to apply schema changes
-    - changelog-***.xml: change log files that manage individual revisions to the database schema
-    - default-insert-for-admin_config.sql: Data file that is loaded in change-log-5.0.xml; which is related to that specific change
+    - `liquibase.properties`: Contains the credentials that liquibase uses to update the schema
+    - `mydatabase.xml`: controls the revision list, and order to apply schema changes
+    - `changelog-***.xml`: change log files that manage individual revisions to the database schema
+    - `default-insert-for-admin_config.sql`: Data file that is loaded in change-log-5.0.xml; which is related to that specific change
+    
 3. `./Dockerfile`: Container that VSCode runs in, this is the terminal with liquibase as a tool.
 
 ## How to
